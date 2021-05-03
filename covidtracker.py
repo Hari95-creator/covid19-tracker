@@ -1,11 +1,8 @@
-import covid                        # pip install covid
+import covid                       
 import tkinter as tk
-import matplotlib.pyplot as plt            # pip install matplotlib
-import pandas as pd                        # pip install pandas
+import matplotlib.pyplot as plt           
+import pandas as pd                        
 
-#======================================================== End ===============================================================
-
-# ===================================================== defining function that generate status =======================================
 def show_data():
     data = covid.Covid()
     country_name = e1.get()
@@ -31,10 +28,8 @@ def show_data():
             'Last_Updated': status['last_update']
             }
 
-    # Create DataFrame
     df = pd.DataFrame(data, index=[0])
 
-    # Print the output.
     print(df)
     cadr = {
 
@@ -53,10 +48,6 @@ def show_data():
 
     plt.show()
 
-#============================================================== End ======================================================
-
-
-# ================================================= Window Design =========================================================
 master = tk.Tk()
 master.title('Covid-19 country status ')
 
@@ -70,10 +61,7 @@ e1 = tk.Entry(master)
 e1.grid(row=2, column=3)
 
 tk.Button(master,
-          text='Show', command=show_data).grid(row=5,
-                                                       column=3,
-                                                       sticky=tk.W,
-                                                       pady=4)
+          text='Show', command=show_data).grid(row=5,column=3,sticky=tk.W,pady=4)
 
 
 tk.Label(master, text="Active Cases : -").grid(row=8)
